@@ -57,11 +57,11 @@ if (isEnabled) {
     silent: false
   }, hexo.config.js_concator);
 
-  hexo.extend.filter.register('after_render:html', require('./lib/optimizeHTML'));
+  hexo.extend.filter.register('after_generate', require('./lib/optimizeHTML'));
 
-  hexo.extend.filter.register('after_render:css', require('./lib/optimizeCSS'));
+  hexo.extend.filter.register('after_generate', require('./lib/optimizeCSS'));
 
-  hexo.extend.filter.register('after_render:js', require('./lib/optimizeJS'));
+  hexo.extend.filter.register('after_generate', require('./lib/optimizeJS'));
 
   hexo.extend.filter.register('after_generate', require('./lib/optimizeImage'));
 
